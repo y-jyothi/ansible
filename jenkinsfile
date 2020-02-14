@@ -16,7 +16,7 @@ git 'https://github.com/y-jyothi/ansible.git'
             "files": [
             {
                 "pattern": "example-repo-local/petclinic.war",
-                "target": "/root/.jenkins/workspace/petclinic_artifact"
+                "target": "/root/.jenkins/workspace/"
             }
             ]
             }"""
