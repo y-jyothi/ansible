@@ -1,0 +1,24 @@
+node {
+
+ 
+stage('Git-Checkout') {
+
+ 
+git 'https://github.com/y-jyothi/ansible.git'
+
+ 
+}
+
+ 
+stage('ansible-deploy') {
+
+ 
+sh 'ansible-playbook --key=/var/lib/jenkins/.ssh/petclinic.pem web-playbook.yml -u ubuntu -vvvv'
+
+ 
+}
+
+ 
+}
+
+ 
