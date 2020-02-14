@@ -9,6 +9,27 @@ git 'https://github.com/y-jyothi/ansible.git'
  
 }
 
+ stage('Jfrog Artifactory download'){
+    
+     steps{
+        script{
+            
+           
+            stag=STAGE_NAME
+            def server= Artifactory.server 'jenkinsArtifactory'
+            def downloadSpec = """{
+            "files": [
+            {
+                "pattern": "example-repo-local/petclinic.war",
+                "target": "/root/.jenkins/workspace/petclinic_artifact"
+            }
+            ]
+            }"""
+        server.download(downloadSpec)
+    }
+    }
+ }
+
  
 stage('ansible-deploy') {
 
