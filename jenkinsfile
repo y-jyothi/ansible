@@ -10,12 +10,7 @@ git 'https://github.com/y-jyothi/ansible.git'
 }
 
  stage('Jfrog Artifactory download'){
-    
-     steps{
-        script{
-            
-           
-            stag=STAGE_NAME
+   
             def server= Artifactory.server 'jenkinsArtifactory'
             def downloadSpec = """{
             "files": [
@@ -26,8 +21,7 @@ git 'https://github.com/y-jyothi/ansible.git'
             ]
             }"""
         server.download(downloadSpec)
-    }
-    }
+    
  }
 
  
