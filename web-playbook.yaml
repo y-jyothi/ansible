@@ -24,13 +24,13 @@
     command: "tar zxf /opt/SP/apps/tomcat.tar.gz  -C /opt/SP/apps/tomcat --strip-components 1"
 
   - name: Copy Index Page Files
-    copy: src=templates/apps dest=/opt/SP/apps/tomcat/webapps/ mode=0644
+    copy: src=/root/mindtree-devops-30Jan2020/04-Terraform/03-Ansible-Deploy/ansible/04-Tomcat/templates/test.html dest=/opt/SP/apps/tomcat/webapps/ mode=0644
     notify: 
     - Restart Tomcat
 
 
   - name: Copy Petclinic Project War Files
-    copy: src=/root/.jenkins/workspace/petclinic_artifact/*.war dest=/opt/SP/apps/tomcat/webapps/ mode=0644
+    copy: src=/root/.jenkins/workspace/petclinic_artifact/petclinic.war dest=/opt/SP/apps/tomcat/webapps/ mode=0644
 
   handlers:
   - name: Restart Tomcat
