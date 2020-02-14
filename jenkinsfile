@@ -13,7 +13,7 @@ git 'https://github.com/y-jyothi/ansible.git'
 stage('ansible-deploy') {
 
  
-sh 'ansible-playbook --key=/root/.ssh/petclinic.pem web-playbook.yml -u ubuntu -v'
+sh 'ansible-playbook --key=/root/.ssh/petclinic.pem web-playbook.yaml -u ubuntu -v'
 
  
 }
