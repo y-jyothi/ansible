@@ -1,12 +1,6 @@
 node {
-
- 
 stage('Git-Checkout') {
-
- 
 git 'https://github.com/y-jyothi/ansible.git'
-
- 
 }
 
  stage('Jfrog Artifactory download'){
@@ -20,20 +14,11 @@ git 'https://github.com/y-jyothi/ansible.git'
             }
             ]
             }"""
-        server.download(downloadSpec)
-    
+        server.download(downloadSpec) 
  }
-
- 
-stage('ansible-deploy') {
-
- 
+stage('ansible-deploy') { 
 sh 'ansible-playbook --key=/root/.ssh/petclinic.pem web-playbook.yaml -u ubuntu -v'
-
- 
-}
-
- 
+} 
 }
 
  
